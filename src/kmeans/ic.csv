@@ -1,0 +1,41 @@
+ID,RACA,QTDE REPETICOES,RESPOSTA IMEDIATA (% de casos),TENDENCIA DISPERSAO,GRADUACAO
+1,Greyhound,31,42,N,40-54
+2,Doberman,3,95,N,01-10
+3,Pastor belga-malinois,10,81,N,11-26
+4,Saluki,25,31,N,40-54
+5,Boston Terrier,39,39,N,40-54
+6,Cao daguas portugues,16,58,N,27-39
+7,Pastor Alemao,1,91,N,01-10
+8,Husky Siberiano,36,35,N,40-54
+9,Welsh Terrier,28,36,N,40-54
+10,Schipperke Pastor Belga,6,76,N,11-26
+11,Spaniel bretao,13,83,N,11-26
+12,Pinscher Miniatura,21,55,N,27-39
+13,Puli,19,61,N,27-39
+14,Dogue alemao,26,33,N,40-54
+15,Irish water spaniel,7,72,N,11-26
+16,Pharaoh Hound,20,62,N,27-39
+17,Dalmata,18,52,N,27-39
+18,Cocker spaniel americano,11,78,N,11-26
+19,Terra-nova,23,53,N,27-39
+20,Lulu da Pomerania,12,85,N,11-26
+21,Airedale Terrier,15,77,N,11-26
+22,Golden Retriever,2,86,N,01-10
+23,Rottweiler,4,94,N,01-10
+24,Weimaraner,8,80,N,11-26
+25,Setter Ingles,17,64,N,27-39
+26,Boxer,40,38,N,40-54
+27,Braco Alemao,5,82,N,11-26
+28,Kerry Blue Terrier,24,52,N,27-39
+29,Staffordshire Bull Terrier,34,41,N,40-54
+30,Pastor Australiano,33,49,N,40-54
+31,Dandio Dinmont Terrier,73,14,N,55-69
+32,Shih-tzu,81,51,S,70-79
+33,Pequines,87,43,S,70-79
+34,Greyhound Italiano,69,17,N,55-69
+35,Afghan hound,95,62,S,70-79
+36,Chow chow,83,32,S,70-79
+37,Norfolk Terrier,45,3,N,55-69
+38,Maltes,56,28,N,55-69
+39,Cao dos Pirineus,47,16,N,55-69
+40,Chihuahua,61,25,N,55-69
