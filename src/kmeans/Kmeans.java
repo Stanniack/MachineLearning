@@ -2,7 +2,6 @@ package kmeans;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 public class Kmeans {
@@ -35,9 +34,7 @@ public class Kmeans {
 
                     }
 
-                    // System.out.println("Ponto " + (k) + ": " + pontos.get(k).getCentroide().getNum());
                 }
-                //System.out.println("____________________________________________________________");
 
             }
 
@@ -60,17 +57,10 @@ public class Kmeans {
                 mediaX = mediaX/inc;
                 mediaY = mediaY/inc;
                 
-                //System.out.println("medias: " + mediaX + " " + mediaY);
                 c.setPontoX(mediaX);
                 c.setPontoY(mediaY);
             }
 
-            //debuga
-            for (Ponto p : pontos) {
-                //System.out.printf("x: %.2f\t\t y: %.2f\t\t - Centroide: %d x: %.2f\t\t y: %.2f\n", p.getPontoX(), p.getPontoY(), p.getCentroide().getNum(), p.getCentroide().getPontoX(), p.getCentroide().getPontoY());
-            }
-
-            //System.out.println("____________________________________________________________");
 
         } // fim iteracao
 

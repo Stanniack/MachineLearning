@@ -43,7 +43,7 @@ public class Main {
         }
 
         
-        new Kmeans().aplicaMetodo(6, 1000, pontos);
+        new Kmeans().aplicaMetodo(6, 1, pontos);
 
     }
 
