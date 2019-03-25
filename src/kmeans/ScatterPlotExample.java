@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.util.List;
 
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 import org.jfree.chart.ChartFactory;
@@ -45,8 +44,8 @@ public class ScatterPlotExample extends JFrame {
 
         for (Centroide c : centroides) {
             XYSeries ponto = new XYSeries(c.getNum());
-            XYSeries ponto2 = new XYSeries("c: " + c.getNum());
-            ponto2.add(c.getPontoX(), c.getPontoY());
+            //XYSeries ponto2 = new XYSeries("c: " + c.getNum());
+            //ponto2.add(c.getPontoX(), c.getPontoY());
             
             for(Ponto p : pontos) {
                 if (p.getCentroide().getNum() == c.getNum()){

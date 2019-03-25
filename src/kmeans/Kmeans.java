@@ -1,6 +1,7 @@
 package kmeans;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import javax.swing.WindowConstants;
 
@@ -13,25 +14,27 @@ public class Kmeans {
 
     public void aplicaMetodo(int qtdCluster, int qtdIteracao, List<Ponto> pontos) {
         List<Centroide> centroides = new ArrayList<>();
+        Long inicio = System.currentTimeMillis();
+
+        // Se for a primeira iteração, as posições dos centróides são sortidas
+        maiorMenorXY(pontos);
+        centroides = criaCluster(qtdCluster, pontos);
 
         for (int i = 0; i < qtdIteracao; i++) {
 
-            // Se for a primeira iteração, as posições dos centróides são sortidas
-            if (i == 0) {
-                maiorMenorXY(pontos);
-                centroides = criaCluster(qtdCluster, pontos);
-            }
+            for (Centroide c : centroides) {
+                for (Ponto p : pontos) {
 
-            
-            for (int j = 0; j < qtdCluster; j++) {
-                for (int k = 0; k < pontos.size(); k++) {
+                    if (p.getCentroide() != null) {
 
-                    // Atribui os centroides para cada ponto, de acordo com a menor distância
-                    if (calculaDistancia(pontos.get(k), centroides.get(j)) < pontos.get(k).getDistanciaCentroideAtual()) {
+                        // Atribui os centroides para cada ponto, de acordo com a menor distância
+                        if (calculaDistancia(p, c) < calculaDistancia(p, p.getCentroide())) {
+                            p.setCentroide(c);
 
-                        pontos.get(k).setDistanciaCentroideAtual(calculaDistancia(pontos.get(k), centroides.get(j)));
-                        pontos.get(k).setCentroide(centroides.get(j));
+                        }
 
+                    } else {
+                        p.setCentroide(c);
                     }
 
                 }
@@ -40,7 +43,7 @@ public class Kmeans {
 
             // recalculo das medias dos centroides
             for (Centroide c : centroides) {
-                
+
                 double mediaY = 0;
                 double mediaX = 0;
                 int inc = 0;
@@ -51,19 +54,21 @@ public class Kmeans {
                         mediaY += p.getPontoY();
                         inc++;
                     }
-                                        
+
                 }
-                
-                mediaX = mediaX/inc;
-                mediaY = mediaY/inc;
-                
+
+                mediaX = mediaX / inc;
+                mediaY = mediaY / inc;
+
                 c.setPontoX(mediaX);
                 c.setPontoY(mediaY);
             }
 
-
+            System.out.println(i);
         } // fim iteracao
 
+        Long fim = System.currentTimeMillis();
+        System.out.println("Sec: " + (fim - inicio) / 1000);
         ScatterPlotExample example = new ScatterPlotExample("Gráfico", centroides, pontos);
         example.setSize(800, 400);
         example.setLocationRelativeTo(null);
@@ -76,15 +81,11 @@ public class Kmeans {
         List<Centroide> centroides = new ArrayList<>();
 
         //System.out.println("MaiorX e MenorX: " + maiorX + " " + menorX + " MaiorY e MenorY: " + maiorY + " " + menorY);
-
         for (int i = 0; i < qtdCluster; i++) {
             centroides.add(new Centroide(i + 1, menorX + (double) (Math.random() * ((maiorX - menorX) + 1)),
                     menorY + (double) (Math.random() * ((maiorX - menorY) + 1))));
 
-            System.out.println(centroides.get(i).getPontoX() + " " + centroides.get(i).getPontoY());
         }
-        
-        System.out.println("");
 
         return centroides;
 

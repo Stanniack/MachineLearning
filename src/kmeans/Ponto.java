@@ -4,27 +4,17 @@ public class Ponto {
 
     private double pontoX;
     private double pontoY;
-    private double distanciaCentroideAtual;
     private Centroide centroide;
 
     public Ponto(){
-        this.distanciaCentroideAtual = Double.POSITIVE_INFINITY;
     }
     
     public Ponto(double pontoX, double pontoY) {
         this.pontoX = pontoX;
         this.pontoY = pontoY;
-        this.distanciaCentroideAtual = Double.POSITIVE_INFINITY;
     }
 
-    public double getDistanciaCentroideAtual() {
-        return distanciaCentroideAtual;
-    }
-
-    public void setDistanciaCentroideAtual(double distanciaCentroide) {
-        this.distanciaCentroideAtual = distanciaCentroide;
-    }
-
+  
     public Centroide getCentroide() {
         return centroide;
     }
